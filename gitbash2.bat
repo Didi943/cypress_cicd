@@ -6,7 +6,7 @@ set msg=%*
 REM Vérifie si message vide
 if "%msg%"=="" (
     echo  Vous devez entrer un message 
-    echo Exemple: push.bat ajout login
+    echo Exemple: gitbash2.bat ajout login
     exit /b 1
 )
 
