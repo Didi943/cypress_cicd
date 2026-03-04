@@ -40,12 +40,6 @@ pipeline {
                }
             }
         }
-        stage('debug permissions') {
-            steps {
-                sh 'ls -l cypress'
-                sh 'ls -l cypress/reports'
-            }
-        }
     }
 
     // post {
