@@ -1,8 +1,10 @@
 pipeline {
-    agent {
-        // Environnrement Node, npm, navigateur chromium, git
+     agent any
+    // {
+    //     // Environnrement Node, npm, navigateur chromium, git
+        
 
-    }
+    // }
 
     // paramètre pour ajouter les tags et rapport
     // tags
