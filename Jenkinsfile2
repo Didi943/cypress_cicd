@@ -40,10 +40,17 @@ pipeline {
                }
             }
         }
+        stage('debug permissions') {
+            steps {
+                sh 'ls -l cypress'
+                sh 'ls -l cypress/reports'
+            }
+        }
     }
 
     post {
         always {
+            sh 'chmod -R 777 cypress/reports' // user à toutes les permissions
             publishHTML([
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
