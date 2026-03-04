@@ -20,7 +20,7 @@ pipeline {
         stage('vérifier les pré-requis'){
             steps{
                script{
-                 if(params.browser=="chromium"){
+                if(params.browser=="chromium"){
                     if (params.run_with_tag==true)
                     {
                         sh "npx cypress run --browser ${params.browser} grepTags='${params.tag}'"
@@ -28,6 +28,8 @@ pipeline {
                     else {sh "npx cypress run --browser ${params.browser}"}
                 
                  }
+                 else { sh "echo 'aucun test est lancer' "}
+                 
                }
             }
         }
