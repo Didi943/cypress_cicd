@@ -2,7 +2,7 @@ pipeline {
      agent 
     {
         // Environnrement Node, npm, navigateur chromium, git
-        
+
         docker {
             image  'cypress/included:cypress-15.11.0-node-24.14.0-chrome-145.0.7632.116-1-ff-148.0-edge-145.0.3800.70-1'
             args '--user=root --entrypoint=""'
@@ -25,7 +25,7 @@ pipeline {
             steps{
                 sh 'node --version'
                 sh 'npm --version'
-                sh 'npm ci'
+                sh 'npm install'
             }
         }
         stage('vérifier les pré-requis'){
