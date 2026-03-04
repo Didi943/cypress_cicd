@@ -3,7 +3,7 @@ pipeline {
     {
         // Environnrement Node, npm, navigateur chromium, git
         docker {
-            image  'cypress/base:24.14.0'
+            image  'cypress/included:cypress-15.11.0-node-24.14.0-chrome-145.0.7632.116-1-ff-148.0-edge-145.0.3800.70-1'
             args '--user=root --entrypoint=""'
         }
 
@@ -20,6 +20,13 @@ pipeline {
     // browser if browser == chromium on lance les testes sinon on affiche aucun test est lancé
 
     stages{
+        stage('install dépendence'){
+            steps{
+                sh 'node --version'
+                sh 'npm --version'
+                sh 'npm ci'
+            }
+        }
         stage('vérifier les pré-requis'){
             steps{
                script{
