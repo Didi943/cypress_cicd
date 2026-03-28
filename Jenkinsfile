@@ -103,24 +103,24 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            echo 'Pipeline terminé.'
-            junit testResults: 'cypress/results/*.xml', allowEmptyResults: true
-            publishHTML(target: [
-                allowMissing         : true,
-                alwaysLinkToLastBuild: true,
-                keepAll              : true,
-                reportDir            : 'cypress/reports',
-                reportFiles          : 'index.html',
-                reportName           : 'Rapport Cypress'
-            ])
-        }
-        success {
-            echo '✅ Tous les tests ont réussi.'
-        }
-        failure {
-            echo '❌ Des tests ont échoué. Consultez les rapports.'
-        }
-    }
+    // post {
+    //     always {
+    //         echo 'Pipeline terminé.'
+    //         junit testResults: 'cypress/results/*.xml', allowEmptyResults: true
+    //         publishHTML(target: [
+    //             allowMissing         : true,
+    //             alwaysLinkToLastBuild: true,
+    //             keepAll              : true,
+    //             reportDir            : 'cypress/reports',
+    //             reportFiles          : 'index.html',
+    //             reportName           : 'Rapport Cypress'
+    //         ])
+    //     }
+    //     success {
+    //         echo '✅ Tous les tests ont réussi.'
+    //     }
+    //     failure {
+    //         echo '❌ Des tests ont échoué. Consultez les rapports.'
+    //     }
+    // }
 }
