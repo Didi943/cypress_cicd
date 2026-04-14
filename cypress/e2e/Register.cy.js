@@ -44,7 +44,7 @@ describe("Register", () => {
         cy.url().should('eql', 'https://agropeyi.fr/index.php');
         cy.get("span[class='d-none d-md-inline']").should('have.text', prenom);
         // deconnexion
-        //modification
+        //modification dyhia
         cy.get('#topBarClientDropdown').click().get('a[href="deconnexion.php"]').click();
         cy.url().should('eql', 'https://agropeyi.fr/index.php?deconnexion=success');
 
