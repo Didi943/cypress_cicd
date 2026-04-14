@@ -46,7 +46,7 @@ describe("Register", () => {
         // deconnexion
 
         cy.get('#topBarClientDropdown').click().get('a[href="deconnexion.php"]').click();
-        cy.url().should('eql', 'https://agropeyi.fr/index.php?deconnexion=success')
+        cy.url().should('eql', 'https://agropeyi.fr/index.php?deconnexion=success');
 
 })
 
