@@ -1,6 +1,7 @@
 ///<reference types="cypress"/>
 
 
+
 describe("Register", () => {
     it("Creation du compte",{tags:['@smoke','@e2e']} , () => {
         // aller sur le lien     
@@ -43,9 +44,9 @@ describe("Register", () => {
         cy.url().should('eql', 'https://agropeyi.fr/index.php');
         cy.get("span[class='d-none d-md-inline']").should('have.text', prenom);
         // deconnexion
-
+        //modification dyhia dekkal git defer
         cy.get('#topBarClientDropdown').click().get('a[href="deconnexion.php"]').click();
-        cy.url().should('eql', 'https://agropeyi.fr/index.php?deconnexion=success')
+        cy.url().should('eql', 'https://agropeyi.fr/index.php?deconnexion=success');
 
 })
 
